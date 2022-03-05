@@ -18,7 +18,7 @@ pipeline {
 
             steps { 
 
-                git '' 
+                git 'https://github.com/srikanta1219/devopsclass-2.git' 
 
             }
 
