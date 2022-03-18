@@ -6,7 +6,7 @@ pipeline {
       stage('checkout') {
            steps {
              
-            checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: '8956f257-38ec-4c57-ab0f-0c62ae697bd7', url: 'https://github.com/srikanta1219/devopsclass-2.git']]])
+            checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: '8956f257-38ec-4c57-ab0f-0c62ae697bd7', url: 'https://github.com/suman7799/devopsclass-2.git']]])
              
           }
         }
@@ -16,7 +16,7 @@ pipeline {
            steps {
               
                 sh 'docker build -t devopsclass2 .' 
-                sh 'docker tag devopsclass2 srikanta1219/devopsclass2:latest'
+                sh 'docker tag devopsclass2 8249355606/devopsclass2:latest'
                 
                
           }
@@ -26,7 +26,7 @@ pipeline {
           
         steps {
           withDockerRegistry(credentialsId: '6b9a6825-97f1-46e9-9120-77f81161eed2', url: 'https://registry.hub.docker.com/') {
-		  sh  'docker push srikanta1219/devopsclass2:latest'
+		  sh  'docker push 8249355606/devopsclass2:latest'
     
 	        }  
           }
